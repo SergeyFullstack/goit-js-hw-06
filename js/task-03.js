@@ -23,15 +23,9 @@ const images = [
 ];
 
 
+
 const galleryEl = document.querySelector('.gallery');
-const createGalleryEl = images.map(image => {
-  let addEl = galleryEl.insertAdjacentHTML(
-    "beforeend",
-    `<li><img src=${image.url} alt='${image.alt}'width = 300 height = 200></li>`
-  );
-  return addEl
-})
 
+const createGalleryEl = images.map(image => `<li><img src=${image.url} alt='${image.alt}'width = 300 height = 200></li>`).join(' ');
 
-
-
+galleryEl.insertAdjacentHTML("beforeend", createGalleryEl);

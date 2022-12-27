@@ -22,7 +22,7 @@ function onBlurBorderColor(event) {
         inputEl.classList.add('valid');
         inputEl.classList.remove('invalid');
     }
-    if (inputEl.value.length === 0) {
+    if (!inputEl.value.length) {
         inputEl.classList.remove('valid');
         inputEl.classList.remove('invalid');
     }

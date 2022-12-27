@@ -30,13 +30,14 @@ function submitHandler(event) {
   const email = event.currentTarget.elements.email;
   const password = event.currentTarget.elements.password;
 
-  if (email.value === '' || password.value === '') {
-    prompt("Please fill in all the fields!");
+  if (!email.value || !password.value ) {
+    alert("Please fill in all the fields!");
   } else {
     objMeanings.email = email.value;
     objMeanings.password = password.value;
+    event.currentTarget.reset();
 
     console.log(objMeanings);
   }
-  event.currentTarget.reset();
+ 
 }
